@@ -1,0 +1,21 @@
+---
+# tasks file for gitclone_debian
+- name: CREATE DIRECTORY
+  file:
+    path: /home/nabiula/repo
+    state: directory
+    mode: '777'
+
+- name: INSTALL GIT
+  yum:
+    name: git
+    state: latest
+    update_cache: yes
+
+- name: CLONE PRELIM EXAM
+  git:
+    repo: 'https://github.com/nabiula/sysad2-12021.git'
+    dest: /home/nabiula/repo
+    version: prelim-exam
+    clone: yes
+    update: yes
