@@ -1,0 +1,11 @@
+---
+- hosts: all
+  vars:
+    user: nabiula11
+    username: nabiula
+  roles:
+    - python
+    - java
+    - changemotd
+    - createuser
+
